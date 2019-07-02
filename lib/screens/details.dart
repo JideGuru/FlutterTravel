@@ -166,6 +166,7 @@ class _DetailsState extends State<Details> {
                 ),
               ),
 
+              SizedBox(height: 10),
 
 
             ],
@@ -174,19 +175,26 @@ class _DetailsState extends State<Details> {
       ),
 
 
-      bottomNavigationBar: Container(
-        height: 50,
-        child: RaisedButton(
-          color: Theme.of(context).accentColor,
-          child: Text(
-            "See Availability",
-            style: TextStyle(
-              color: Theme.of(context).sliderTheme.valueIndicatorColor,
-            ),
-          ),
-          onPressed: (){},
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.airplanemode_active,
         ),
       ),
+
+//      bottomNavigationBar: Container(
+//        height: 50,
+//        child: RaisedButton(
+//          elevation: 15,
+//          color: Theme.of(context).primaryColor,
+//          child: Text(
+//            "See Availability",
+//            style: TextStyle(
+//              color: Theme.of(context).accentColor,
+//            ),
+//          ),
+//          onPressed: (){},
+//        ),
+//      ),
     );
   }
 }
