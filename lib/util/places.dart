@@ -60,7 +60,7 @@ List places = [
         "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
   },
   {
-    "name": "Donec Pool",
+    "name": "Tincidunt Pool",
     "img": "assets/5.jpeg",
     "price": r"$100/night",
     "location": "Madrid, Spain",

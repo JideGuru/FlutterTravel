@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
           
           Container(
             padding: EdgeInsets.only(top: 10, left: 20),
-            height: 270,
+            height: 250,
 //            color: Colors.red,
             width: MediaQuery.of(context).size.width,
             child: ListView.builder(
@@ -103,8 +103,8 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(right: 20),
                   child: InkWell(
                     child: Container(
-                      height: 270,
-                      width: 160,
+                      height: 250,
+                      width: 140,
 //                      color: Colors.green,
                       child: Column(
                         children: <Widget>[
@@ -112,8 +112,8 @@ class _HomeState extends State<Home> {
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
                               "${place["img"]}",
-                              height: 198,
-                              width: 160,
+                              height: 178,
+                              width: 140,
                               fit: BoxFit.cover,
                             ),
                           ),
