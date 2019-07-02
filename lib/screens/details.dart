@@ -179,6 +179,7 @@ class _DetailsState extends State<Details> {
         child: Icon(
           Icons.airplanemode_active,
         ),
+        onPressed: (){},
       ),
 
 //      bottomNavigationBar: Container(
