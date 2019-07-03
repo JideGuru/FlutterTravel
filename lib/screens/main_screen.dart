@@ -11,78 +11,40 @@ class _MainScreenState extends State<MainScreen> {
   PageController _pageController;
   int _page = 0;
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    Widget barIcon(
+        {IconData icon = Icons.home, int page = 0, bool badge = false}) {
+      return IconButton(
+        icon: badge ? IconBadge(icon: icon, size: 24) : Icon(icon, size: 24),
+        color: _page == page
+            ? Theme.of(context).accentColor
+            : Colors.blueGrey[300],
+        onPressed: () => _pageController.jumpToPage(page),
+      );
+    }
 
+    return Scaffold(
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
         controller: _pageController,
         onPageChanged: onPageChanged,
-        children: <Widget>[
-          Home(),
-          Home(),
-          Home(),
-          Home(),
-        ],
+        children: List.generate(4, (index) => Home()),
       ),
-
       bottomNavigationBar: BottomAppBar(
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            SizedBox(width:7),
-            IconButton(
-              icon: Icon(
-                Icons.home,
-                size: 24.0,
-              ),
-              color: _page == 0
-                  ? Theme.of(context).accentColor
-                  : Colors.blueGrey[300],
-              onPressed: ()=>_pageController.jumpToPage(0),
-            ),
-
-            IconButton(
-              icon:Icon(
-                Icons.favorite,
-                size: 24.0,
-              ),
-              color: _page == 1
-                  ? Theme.of(context).accentColor
-                  : Colors.blueGrey[300],
-              onPressed: ()=>_pageController.jumpToPage(1),
-            ),
-
-            IconButton(
-              icon: IconBadge(
-                icon: Icons.mode_comment,
-                size: 24.0,
-              ),
-              color: _page == 2
-                  ? Theme.of(context).accentColor
-                  : Colors.blueGrey[300],
-              onPressed: ()=>_pageController.jumpToPage(2),
-            ),
-
-            IconButton(
-              icon: Icon(
-                Icons.person,
-                size: 24.0,
-              ),
-              color: _page == 3
-                  ? Theme.of(context).accentColor
-                  : Colors.blueGrey[300],
-              onPressed: ()=>_pageController.jumpToPage(3),
-            ),
-
-            SizedBox(width:7),
+            SizedBox(width: 7),
+            barIcon(icon: Icons.home, page: 0),
+            barIcon(icon: Icons.favorite, page: 1),
+            barIcon(icon: Icons.mode_comment, page: 2, badge: true),
+            barIcon(icon: Icons.person, page: 3),
+            SizedBox(width: 7),
           ],
         ),
         color: Theme.of(context).primaryColor,
-
       ),
     );
   }
