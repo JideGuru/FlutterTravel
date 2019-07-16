@@ -35,6 +35,13 @@ To toggle the theme, change the `isDark` variable in `main.dart`.
 ## 🤓 Author(s)
 **Olusegun Festus Babajide**
 
+## ☕️  Donate
+
+Buy me a cup of Coffee😁
+
+| Mode | Link/Wallet|
+| ------| ------------|
+| Bitcoin | 3GrziPW6Gz6S5mXo2EsiYpafW8vXVq5Rbv|
 
 ## Getting Started
 
