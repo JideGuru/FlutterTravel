@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_concept/controller/home_controller.dart';
 import 'package:flutter_travel_concept/screens/details.dart';
 import 'package:flutter_travel_concept/widgets/icon_badge.dart';
 import 'package:flutter_travel_concept/util/places.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,28 +13,37 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final TextEditingController _searchControl = new TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<HomeController>(context);
+
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu,
-          ),
-          onPressed: (){},
-        ),
-
         actions: <Widget>[
           IconButton(
             icon: IconBadge(
               icon: Icons.notifications_none,
             ),
-            onPressed: (){},
+            onPressed: () {},
           ),
         ],
       ),
-
+      drawer: Drawer(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: Container(),
+            ),
+            FlatButton(
+                child: provider.modeChange ? Text('Dark mode') : Text('White Mode'),
+                onPressed: () {
+                  provider.setModeChange = !provider.modeChange;
+                },
+              ),
+          ],
+        ),
+      ),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -45,8 +56,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-
-
           Padding(
             padding: EdgeInsets.all(20),
             child: Container(
@@ -65,10 +74,14 @@ class _HomeState extends State<Home> {
                   contentPadding: EdgeInsets.all(10.0),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
-                    borderSide: BorderSide(color: Colors.white,),
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white,),
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   hintText: "E.g: New York, United States",
@@ -86,7 +99,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          
           Container(
             padding: EdgeInsets.only(top: 10, left: 20),
             height: 250,
@@ -97,7 +109,6 @@ class _HomeState extends State<Home> {
               primary: false,
               itemCount: places == null ? 0 : places.length,
               itemBuilder: (BuildContext context, int index) {
-
                 Map place = places.reversed.toList()[index];
                 return Padding(
                   padding: const EdgeInsets.only(right: 20),
@@ -117,7 +128,6 @@ class _HomeState extends State<Home> {
                               fit: BoxFit.cover,
                             ),
                           ),
-
                           SizedBox(height: 7),
                           Container(
                             alignment: Alignment.centerLeft,
@@ -131,7 +141,6 @@ class _HomeState extends State<Home> {
                               textAlign: TextAlign.left,
                             ),
                           ),
-
                           SizedBox(height: 3),
                           Container(
                             alignment: Alignment.centerLeft,
@@ -146,14 +155,13 @@ class _HomeState extends State<Home> {
                               textAlign: TextAlign.left,
                             ),
                           ),
-
                         ],
                       ),
                     ),
-                    onTap: (){
+                    onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (BuildContext context){
+                          builder: (BuildContext context) {
                             return Details();
                           },
                         ),
@@ -164,7 +172,6 @@ class _HomeState extends State<Home> {
               },
             ),
           ),
-
           Padding(
             padding: EdgeInsets.all(20),
             child: ListView.builder(
@@ -175,7 +182,7 @@ class _HomeState extends State<Home> {
               itemBuilder: (BuildContext context, int index) {
                 Map place = places[index];
                 return Padding(
-                  padding: const EdgeInsets.only(bottom:15.0),
+                  padding: const EdgeInsets.only(bottom: 15.0),
                   child: InkWell(
                     child: Container(
                       height: 70,
@@ -191,12 +198,10 @@ class _HomeState extends State<Home> {
                               fit: BoxFit.cover,
                             ),
                           ),
-
                           SizedBox(width: 15),
-
                           Container(
                             height: 80,
-                            width: MediaQuery.of(context).size.width-130,
+                            width: MediaQuery.of(context).size.width - 130,
                             child: ListView(
                               primary: false,
                               physics: NeverScrollableScrollPhysics(),
@@ -214,7 +219,6 @@ class _HomeState extends State<Home> {
                                     textAlign: TextAlign.left,
                                   ),
                                 ),
-
                                 SizedBox(height: 3),
                                 Row(
                                   children: <Widget>[
@@ -223,9 +227,7 @@ class _HomeState extends State<Home> {
                                       size: 13,
                                       color: Colors.blueGrey[300],
                                     ),
-
                                     SizedBox(width: 3),
-
                                     Container(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
@@ -241,7 +243,6 @@ class _HomeState extends State<Home> {
                                     ),
                                   ],
                                 ),
-
                                 SizedBox(height: 10),
                                 Container(
                                   alignment: Alignment.centerLeft,
@@ -255,19 +256,16 @@ class _HomeState extends State<Home> {
                                     textAlign: TextAlign.left,
                                   ),
                                 ),
-
-
                               ],
                             ),
                           ),
-
                         ],
                       ),
                     ),
-                    onTap: (){
+                    onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (BuildContext context){
+                          builder: (BuildContext context) {
                             return Details();
                           },
                         ),
@@ -278,11 +276,8 @@ class _HomeState extends State<Home> {
               },
             ),
           ),
-
-
         ],
       ),
-
     );
   }
 }
