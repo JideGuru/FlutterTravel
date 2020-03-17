@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_travel_concept/controller/home_controller.dart';
 import 'package:flutter_travel_concept/screens/details.dart';
 import 'package:flutter_travel_concept/widgets/icon_badge.dart';
 import 'package:flutter_travel_concept/util/places.dart';
-import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -15,7 +13,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<HomeController>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,22 +24,6 @@ class _HomeState extends State<Home> {
             onPressed: () {},
           ),
         ],
-      ),
-      drawer: Drawer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-              child: Container(),
-            ),
-            FlatButton(
-                child: provider.modeChange ? Text('Dark mode') : Text('White Mode'),
-                onPressed: () {
-                  provider.setModeChange = !provider.modeChange;
-                },
-              ),
-          ],
-        ),
       ),
       body: ListView(
         children: <Widget>[
