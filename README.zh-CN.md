@@ -33,15 +33,8 @@
 * 会思考的大脑 🤓🤓
 
 ## 🤓 作者(s)
-**Olusegun Festus Babajide**
+**Olusegun Festus Babajide** [![Twitter Follow](https://img.shields.io/twitter/follow/iamjideguru.svg?style=social)](https://twitter.com/iamjideguru)
 
-## ☕️  捐
-
-买一杯咖啡给我😁
-
-| 模式 | 链接/钱包|
-| ------| ------------|
-| Bitcoin | 3GrziPW6Gz6S5mXo2EsiYpafW8vXVq5Rbv|
 
 ## 快速开始
 
