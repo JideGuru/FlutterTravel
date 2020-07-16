@@ -22,9 +22,7 @@ Images are from [Unsplash](https://unsplash.com)
 
 
 ## Toggle theme
-To toggle the theme, change the `isDark` variable in `main.dart`.
-
-`true` for dark and `false` for light.
+The App's theme adapts to your device's theme
 
 ## ✨ Requirements
 * Any Operating System (ie. MacOS X, Linux, Windows)
