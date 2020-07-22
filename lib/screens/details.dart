@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_travel_concept/util/places.dart';
 import 'package:flutter_travel_concept/widgets/icon_badge.dart';
 
-
 class Details extends StatefulWidget {
   @override
   _DetailsState createState() => _DetailsState();
@@ -17,20 +16,19 @@ class _DetailsState extends State<Details> {
           icon: Icon(
             Icons.arrow_back,
           ),
-          onPressed: ()=>Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
-
         actions: <Widget>[
           IconButton(
             icon: IconBadge(
               icon: Icons.notifications_none,
             ),
-            onPressed: (){},
+            onPressed: () {},
           ),
         ],
       ),
 
-      body:  ListView(
+      body: ListView(
         children: <Widget>[
           SizedBox(height: 10),
           Container(
@@ -50,7 +48,7 @@ class _DetailsState extends State<Details> {
                     child: Image.asset(
                       "${place["img"]}",
                       height: 250,
-                      width: MediaQuery.of(context).size.width-40,
+                      width: MediaQuery.of(context).size.width - 40,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -58,17 +56,13 @@ class _DetailsState extends State<Details> {
               },
             ),
           ),
-
-
           SizedBox(height: 20),
-
           ListView(
             padding: EdgeInsets.symmetric(horizontal: 20),
             primary: false,
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             children: <Widget>[
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -84,18 +78,14 @@ class _DetailsState extends State<Details> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-
                   IconButton(
                     icon: Icon(
                       Icons.bookmark,
                     ),
-                    onPressed: (){},
+                    onPressed: () {},
                   ),
-
-
                 ],
               ),
-
               Row(
                 children: <Widget>[
                   Icon(
@@ -103,9 +93,7 @@ class _DetailsState extends State<Details> {
                     size: 14,
                     color: Colors.blueGrey[300],
                   ),
-
                   SizedBox(width: 3),
-
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -121,9 +109,7 @@ class _DetailsState extends State<Details> {
                   ),
                 ],
               ),
-
               SizedBox(height: 20),
-
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -136,9 +122,7 @@ class _DetailsState extends State<Details> {
                   textAlign: TextAlign.left,
                 ),
               ),
-
               SizedBox(height: 40),
-
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -151,9 +135,7 @@ class _DetailsState extends State<Details> {
                   textAlign: TextAlign.left,
                 ),
               ),
-
               SizedBox(height: 10),
-
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -165,21 +147,17 @@ class _DetailsState extends State<Details> {
                   textAlign: TextAlign.left,
                 ),
               ),
-
               SizedBox(height: 10),
-
-
             ],
           ),
         ],
       ),
 
-
       floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.airplanemode_active,
         ),
-        onPressed: (){},
+        onPressed: () {},
       ),
 
 //      bottomNavigationBar: Container(
