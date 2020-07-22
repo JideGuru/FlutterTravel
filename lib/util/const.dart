@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-class Constants{
 
+class Constants {
   static String appName = "Flutter Travel";
 
   //Colors for theme
@@ -15,21 +15,18 @@ class Constants{
   static ThemeData lightTheme = ThemeData(
     backgroundColor: lightBG,
     primaryColor: lightPrimary,
-    accentColor:  lightAccent,
+    accentColor: lightAccent,
     cursorColor: lightAccent,
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
       elevation: 0,
       textTheme: TextTheme(
-        title: TextStyle(
+        headline6: TextStyle(
           color: darkBG,
           fontSize: 18.0,
           fontWeight: FontWeight.w800,
         ),
       ),
-//      iconTheme: IconThemeData(
-//        color: lightAccent,
-//      ),
     ),
   );
 
@@ -43,17 +40,12 @@ class Constants{
     appBarTheme: AppBarTheme(
       elevation: 0,
       textTheme: TextTheme(
-        title: TextStyle(
+        headline6: TextStyle(
           color: lightBG,
           fontSize: 18.0,
           fontWeight: FontWeight.w800,
         ),
       ),
-//      iconTheme: IconThemeData(
-//        color: darkAccent,
-//      ),
     ),
   );
-
-
 }
