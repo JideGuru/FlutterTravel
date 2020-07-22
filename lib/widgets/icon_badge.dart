@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class IconBadge extends StatefulWidget {
-
   final IconData icon;
   final double size;
   final Color color;
@@ -14,7 +13,6 @@ class IconBadge extends StatefulWidget {
 }
 
 class _IconBadgeState extends State<IconBadge> {
-
   int counter = 0;
 
   @override
