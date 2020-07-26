@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_travel_concept/util/places.dart';
 import 'package:flutter_travel_concept/widgets/icon_badge.dart';
 
-class Details extends StatefulWidget {
-  @override
-  _DetailsState createState() => _DetailsState();
-}
-
-class _DetailsState extends State<Details> {
+class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,35 +22,10 @@ class _DetailsState extends State<Details> {
           ),
         ],
       ),
-
       body: ListView(
         children: <Widget>[
-          SizedBox(height: 10),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            height: 250,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              primary: false,
-              itemCount: places == null ? 0 : places.length,
-              itemBuilder: (BuildContext context, int index) {
-                Map place = places[index];
-
-                return Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      "${place["img"]}",
-                      height: 250,
-                      width: MediaQuery.of(context).size.width - 40,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
+          SizedBox(height: 10.0),
+          buildSlider(),
           SizedBox(height: 20),
           ListView(
             padding: EdgeInsets.symmetric(horizontal: 20),
@@ -135,45 +105,57 @@ class _DetailsState extends State<Details> {
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 10.0),
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "${places[0]["details"]}",
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
-                    fontSize: 15,
+                    fontSize: 15.0,
                   ),
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 10.0),
             ],
           ),
         ],
       ),
-
       floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.airplanemode_active,
         ),
         onPressed: () {},
       ),
+    );
+  }
 
-//      bottomNavigationBar: Container(
-//        height: 50,
-//        child: RaisedButton(
-//          elevation: 15,
-//          color: Theme.of(context).primaryColor,
-//          child: Text(
-//            "See Availability",
-//            style: TextStyle(
-//              color: Theme.of(context).accentColor,
-//            ),
-//          ),
-//          onPressed: (){},
-//        ),
-//      ),
+  buildSlider() {
+    return Container(
+      padding: EdgeInsets.only(left: 20),
+      height: 250.0,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        primary: false,
+        itemCount: places == null ? 0 : places.length,
+        itemBuilder: (BuildContext context, int index) {
+          Map place = places[index];
+
+          return Padding(
+            padding: EdgeInsets.only(right: 10.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10.0),
+              child: Image.asset(
+                "${place["img"]}",
+                height: 250.0,
+                width: MediaQuery.of(context).size.width - 40.0,
+                fit: BoxFit.cover,
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }
